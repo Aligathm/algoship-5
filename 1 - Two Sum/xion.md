@@ -1,5 +1,3 @@
-<!-- @format -->
-
 Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -30,10 +28,10 @@ Output: [0,1]
 
 Constraints:
 
-- `2 <= nums.length <= 104`
-- `-109 <= nums[i] <= 109`
-- `-109 <= target <= 109`
-- Only one valid answer exists.
+-   `2 <= nums.length <= 104`
+-   `-109 <= nums[i] <= 109`
+-   `-109 <= target <= 109`
+-   Only one valid answer exists.
 
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
@@ -46,15 +44,15 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-  // 일단 배열 0번째 인덱스랑 다른 인덱스 전체랑 하나씩 더해서 target값인지 확인
-  // 맞음? 나오면 인덱스값 저장 함 answer 리턴
-  // 아니면 다음 인덱스랑 나머지 값들 하나씩 또 다시 더해봄
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = 1; j < nums.length; j++) {
-      if (i == j) break
-      if (nums[i] + nums[j] === target) return [i, j]
+    // 일단 배열 0번째 인덱스랑 다른 인덱스 전체랑 하나씩 더해서 target값인지 확인
+    // 맞음? 나오면 인덱스값 저장 함 answer 리턴
+    // 아니면 다음 인덱스랑 나머지 값들 하나씩 또 다시 더해봄
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = 1; j < nums.length; j++) {
+            if (i == j) break;
+            if (nums[i] + nums[j] === target) return [i, j];
+        }
     }
-  }
-  return []
-}
+    return [];
+};
 ```
