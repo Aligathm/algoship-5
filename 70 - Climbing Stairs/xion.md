@@ -47,3 +47,8 @@ var climbStairs = function (n) {
     return climb(n);
 };
 ```
+<img width="1010" alt="스크린샷 2023-02-07 오후 11 51 17" src="https://user-images.githubusercontent.com/67771055/217278525-84513b4f-6994-4f3a-9863-3701a443ca95.png">
+
+<img width="1031" alt="스크린샷 2023-02-07 오후 11 52 46" src="https://user-images.githubusercontent.com/67771055/217278899-406a7c37-38d7-4cee-ba37-b3fb613687bf.png">
+
+<img width="1021" alt="스크린샷 2023-02-07 오후 11 53 13" src="https://user-images.githubusercontent.com/67771055/217278993-bde1845b-bef6-48e6-85da-a7c589beafbc.png">
