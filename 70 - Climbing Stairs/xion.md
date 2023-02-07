@@ -29,22 +29,21 @@ Constraints:
 
 ---
 
-# Dynamic Progrmaming (Bottom-up) with Memoization
+# Dynamic Progrmaming (Top-down) with Memoization
 
-Top-down으로도 풀었지만 Bottom-up 코드 올림
+찬찬히 강의 수강
 
 ```js
 var climbStairs = function (n) {
-    if (n <= 2) return n;
-    const memo = Array(n + 1).fill(0);
-
-    memo[1] = 1;
-    memo[2] = 2;
-
-    for (let i = 3; i <= n; i++) {
-        memo[i] = memo[i - 1] + memo[i - 2];
+    const memo = { 1: 1, 2: 2 };
+    function climb(n) {
+        if (memo[n]) return memo[n];
+        else {
+            memo[n] = climb(n - 1) + climb(n - 2);
+            return memo[n];
+        }
     }
 
-    return memo[n];
+    return climb(n);
 };
 ```
