@@ -47,27 +47,23 @@ Follow up: Can you come up with an algorithm that runs in `O(m + n)` time?
 # Two Pointer
 
 ```js
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */
 var merge = function (nums1, m, nums2, n) {
-    // nums1 pointer
-    let left = m - 1;
+    if (n === 0) return;
+    let idx1 = m;
+    let idx2 = 0;
 
-    // nums2 pointer
-    let right = n - 1;
-
-    // pointer to iterate nums1
-    let idx = nums1.length - 1;
-
-    while (left >= 0 && right >= 0 && idx >= 0) {
-        if (nums1[left] <= nums2[right]) nums1[idx--] = nums2[right--];
-        else nums1[idx--] = nums1[left--];
+    while (idx1 <= nums1.length - 1 && idx2 <= nums2.length - 1) {
+        nums1[idx1] = nums2[idx2];
+        idx1++;
+        idx2++;
     }
-
-    // edge case: nums1 = [0], m = 0, nums2 = [1], n = 1
-    // 즉, nums1은 이미 merge가 끝났거나,
-    // nums2가 nums1보다, merge되어야 할 요소가 더 많은 경우다.
-    // idx = m + n이기 때문에 right(n-1)가 먼저 0이 됨이 보증되므로 idx >= 0은 넣지 않는다.
-    while (right >= 0) {
-        nums1[idx--] = nums2[right--];
-    }
+    nums1.sort((a, b) => a - b);
 };
 ```
