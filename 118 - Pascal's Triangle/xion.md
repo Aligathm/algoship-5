@@ -37,9 +37,9 @@ Output: [[1]]
  */
 var generate = function (numRows) {
     let pascalArray = [];
-    for (var i = 0; i < numRows; i++) {
+    for (let i = 0; i < numRows; i++) {
         pascalArray[i] = [1];
-        for (var j = 1; j < i; j++) {
+        for (let j = 1; j < i; j++) {
             pascalArray[i][j] = pascalArray[i - 1][j - 1] + pascalArray[i - 1][j];
         }
         if (i != 0) pascalArray[i].push(1);
