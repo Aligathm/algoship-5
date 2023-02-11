@@ -44,8 +44,6 @@ Follow up: Can you come up with an algorithm that runs in `O(m + n)` time?
 
 ---
 
-# Two Pointer
-
 ```js
 /**
  * @param {number[]} nums1
